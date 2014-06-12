@@ -20,10 +20,10 @@ public class Main extends Application {
         mPrimaryStage = primaryStage;
         mPrimaryStage.setResizable(false);
         mPrimaryStage.resizableProperty().setValue(false);
-        changePrimaryStageScene(mPrimaryStage, "ログイン", "LoginWindow");
+        changeScene(mPrimaryStage, "ログイン", "LoginWindow");
     }
 
-    public void changePrimaryStageScene(Stage stage, String title, String fxml) {
+    public void changeScene(Stage stage, String title, String fxml) {
         try {
             stage.setTitle(title);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/" + fxml + ".fxml"));
