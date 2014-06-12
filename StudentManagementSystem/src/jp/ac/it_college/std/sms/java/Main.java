@@ -20,18 +20,18 @@ public class Main extends Application {
         mPrimaryStage = primaryStage;
         mPrimaryStage.setResizable(false);
         mPrimaryStage.resizableProperty().setValue(false);
-        changePrimaryStageScene("ログイン", "LoginWindow");
+        changePrimaryStageScene(mPrimaryStage, "ログイン", "LoginWindow");
     }
 
-    public void changePrimaryStageScene(String title, String fxml) {
+    public void changePrimaryStageScene(Stage stage, String title, String fxml) {
         try {
-            mPrimaryStage.setTitle(title);
+            stage.setTitle(title);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/" + fxml + ".fxml"));
             Pane pane = loader.load();
             BaseController controller = loader.getController();
             controller.setMain(this);
-            mPrimaryStage.setScene(new Scene(pane));
-            mPrimaryStage.show();
+            stage.setScene(new Scene(pane));
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
