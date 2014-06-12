@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+
+		<Label layoutX="116.0" layoutY="97.0" text="学籍番号">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</Label>
+
+		<Label layoutX="141.0" layoutY="204.0" text="名前">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</Label>
+
+		<Label layoutX="141.0" layoutY="416.0" text="学年">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</Label>
+
+		<Button layoutX="48.0" layoutY="520.0" mnemonicParsing="false" text="終了" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="30.0">
+			<font>
+				<Font size="20.0" />
+			</font>
+		</Button>
+
+		<Button layoutX="685.0" layoutY="520.0" mnemonicParsing="false" text="追加" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="120.0">
+			<font>
+				<Font size="20.0" />
+			</font>
+		</Button>
+
+		<TextField layoutX="253.0" layoutY="88.0" promptText="学籍番号">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</TextField>
+
+		<TextField layoutX="517.0" layoutY="195.0" prefHeight="49.0" prefWidth="236.0" promptText="名">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</TextField>
+
+		<TextField layoutX="253.0" layoutY="195.0" prefHeight="49.0" prefWidth="236.0" promptText="姓">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</TextField>
+
+		<Label layoutX="141.0" layoutY="300.0" text="学科">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</Label>
+
+		<Label layoutX="91.0" layoutY="331.0" text="コース／専攻">
+			<font>
+				<Font size="25.0" />
+			</font>
+		</Label>
+
+		<ComboBox layoutX="252.0" layoutY="314.0" prefHeight="35.0" promptText="学科" value="選択してください">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="エンジニア科 システムコース" />
+                    <String fx:value="ITスペシャリスト科 システムコース" />
+                    <String fx:value="ITスペシャリスト科 ネットワークセキュリティコース" />
+                    <String fx:value="ITスペシャリスト科 インターネットビジネスコース" />
+                    <String fx:value="クリエイター科 Webコンテンツ専攻" />
+                    <String fx:value="クリエイター科 映像コンテンツ専攻" />
+                    <String fx:value="クリエイター科 サウンドコンテンツ専攻" />
+                    <String fx:value="夜間エンジニア科" />
+                    <String fx:value="日本語ITコース" />
+                </FXCollections>
+            </items>
+		</ComboBox>
+
+		<ComboBox layoutX="252.0" layoutY="414.0" prefHeight="35.0" promptText="学年" value="選択してください">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="1年" />
+                    <String fx:value="2年" />
+                    <String fx:value="3年" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+	</children>
+</AnchorPane>
