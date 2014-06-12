@@ -20,7 +20,7 @@ public class Main extends Application {
         mPrimaryStage = primaryStage;
         mPrimaryStage.setResizable(false);
         mPrimaryStage.resizableProperty().setValue(false);
-        changePrimaryStageScene("Login", "LoginWindow");
+        changePrimaryStageScene("ログイン", "LoginWindow");
     }
 
     public void changePrimaryStageScene(String title, String fxml) {
@@ -35,5 +35,9 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Stage getPrimaryStage() {
+        return mPrimaryStage;
     }
 }
