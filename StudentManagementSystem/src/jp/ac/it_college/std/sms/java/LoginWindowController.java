@@ -15,24 +15,22 @@ public class LoginWindowController extends BaseController {
     @FXML private Label error;
 
     public void Login() {
-        String id = student_id.getText();
-        String pw = password.getText();
-        String resultPassWord = null;
-
         try {
-            ResultSet resultSet = DataBaseConnection.getInstance().getStatement().executeQuery(
-                    "select password from student where id = '" + id + "';");
-            while (resultSet.next()) {
-                resultPassWord = resultSet.getString("password");
+            ResultSet resultSetPassword = DataBaseConnection.getInstance().getStatement().executeQuery(
+                    "select password from student where id = '" + student_id.getText() + "';"
+            );
+
+            String resultPassWord = null;
+            while (resultSetPassword.next()) {
+                resultPassWord = resultSetPassword.getString("password");
+            }
+            if (password.getText().equals(resultPassWord)) {
+                mMain.changeScene(mMain.getPrimaryStage(), "学生一覧", "StudentListWindow");
+            } else {
+                error.setText("IDかパスワードが間違っています");
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-
-        if (pw.equals(resultPassWord)) {
-            mMain.changeScene(mMain.getPrimaryStage(), "学生一覧", "StudentListWindow");
-        } else {
-            error.setText("パスワードが間違っています");
         }
     }
 

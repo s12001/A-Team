@@ -9,6 +9,7 @@ public class StudentListWindowController extends BaseController {
     }
 
     public void Close() {
+        DataBaseConnection.getInstance().closeConnection();
         mMain.getPrimaryStage().close();
     }
 
