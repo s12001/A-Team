@@ -29,7 +29,7 @@
             </font>
         </Button>
 
-        <ComboBox layoutX="324.0" layoutY="125.0" value="学科/コース" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0">
+        <ComboBox fx:id="department" layoutX="324.0" layoutY="125.0" value="学科/コース" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0">
             <!--<items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="学科/コース" />
@@ -46,7 +46,7 @@
             </items>-->
         </ComboBox>
 
-        <ComboBox layoutX="324.0" layoutY="125.0" value="学年" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="110.0">
+        <ComboBox fx:id="schoolGrade" layoutX="324.0" layoutY="125.0" value="学年" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="110.0">
             <!--<items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="学年" />
