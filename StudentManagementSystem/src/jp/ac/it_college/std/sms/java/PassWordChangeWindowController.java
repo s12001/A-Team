@@ -1,13 +1,16 @@
 package jp.ac.it_college.std.sms.java;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.security.MessageDigest;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 public class PassWordChangeWindowController extends BaseController {
     public static final String TITLE = "パスワード変更";

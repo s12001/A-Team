@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.ac.it_college.std.sms.java.LoginWindowController">
+<AnchorPane fx:id="loginWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.ac.it_college.std.sms.java.LoginWindowController">
     <children>
 
         <TextField fx:id="student_id" layoutX="351.0" layoutY="202.0" prefHeight="38.0" prefWidth="256.0" promptText="学籍番号" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="193.0" AnchorPane.topAnchor="170.0">

@@ -1,20 +1,35 @@
 package jp.ac.it_college.std.sms.java;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class LoginWindowController extends BaseController {
+public class LoginWindowController extends BaseController implements Initializable {
     public static final String TITLE = "ログイン";
     public static final String WINDOW_FXML_NAME = "LoginWindow";
+    @FXML private AnchorPane loginWindow;
     @FXML private TextField student_id;
     @FXML private PasswordField password;
     @FXML private Label error;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loginWindow.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER)) {
+                Login();
+            }
+        });
+    }
 
     public void Login() {
         if (checkPassWord()) {
