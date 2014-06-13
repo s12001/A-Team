@@ -17,13 +17,13 @@ public class DataBaseConnection {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             mConnection = DriverManager.getConnection(
-                    "jdbc:mysql://172.16.40.3/pbl", "pbl", "itcollege"
+                    "jdbc:mysql://localhost/pbl", "root", "159357"
             );
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
     }
 
