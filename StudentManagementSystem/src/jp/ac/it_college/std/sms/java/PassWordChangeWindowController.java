@@ -35,6 +35,8 @@ public class PassWordChangeWindowController extends BaseController {
             } catch (SQLException e) {
                 System.err.println(e.getMessage());
             }
+        } else {
+            resultLabel.setText("パスワードが一致しません");
         }
     }
 }
