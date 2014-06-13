@@ -37,6 +37,14 @@ public class DataBaseConnection {
         return statement;
     }
 
+    public void closeConnection() {
+        try {
+            mConnection.close();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
     public PreparedStatement getPreparedStatement(String sql) {
         PreparedStatement preparedStatement = null;
         try {
