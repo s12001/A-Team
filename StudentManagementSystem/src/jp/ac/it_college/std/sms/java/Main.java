@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class Main extends Application {
     private Stage mPrimaryStage;
+    private User mUser;
 
     public static void main(String[] args) {
         launch(args);
@@ -18,7 +19,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         mPrimaryStage = primaryStage;
-        changeScene(mPrimaryStage, "ログイン", "LoginWindow");
+        mUser = new User();
+        changeScene(mPrimaryStage, LoginWindowController.TITLE, LoginWindowController.WINDOW_FXML_NAME);
     }
 
     public void changeScene(Stage stage, String title, String fxml) {
@@ -36,6 +38,7 @@ public class Main extends Application {
         stage.resizableProperty().setValue(false);
         BaseController controller = loader.getController();
         controller.setMain(this);
+        controller.setUser(mUser);
         stage.setScene(new Scene(pane));
         stage.show();
     }

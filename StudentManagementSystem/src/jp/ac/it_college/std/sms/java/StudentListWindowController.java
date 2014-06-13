@@ -3,9 +3,11 @@ package jp.ac.it_college.std.sms.java;
 import javafx.stage.Stage;
 
 public class StudentListWindowController extends BaseController {
+    public static final String TITLE = "学生一覧";
+    public static final String WINDOW_FXML_NAME = "StudentListWindow";
 
     public void Logout() {
-        mMain.changeScene(mMain.getPrimaryStage(), "ログイン", "LoginWindow");
+        mMain.changeScene(mMain.getPrimaryStage(), LoginWindowController.TITLE, LoginWindowController.WINDOW_FXML_NAME);
     }
 
     public void Close() {
@@ -14,14 +16,10 @@ public class StudentListWindowController extends BaseController {
     }
 
     public void StudentAddHandler() {
-        Stage stage = new Stage();
-        stage.initOwner(mMain.getPrimaryStage());
-        mMain.changeScene(stage, "学生追加", "StudentAddWindow");
+        mMain.changeScene(new Stage(), StudentAddWindowController.TITLE, StudentAddWindowController.WINDOW_FXML_NAME);
     }
 
     public void AttendanceHandler() {
-        Stage stage = new Stage();
-        stage.initOwner(mMain.getPrimaryStage());
-        mMain.changeScene(stage, "出席", "AttendanceWindow");
+        mMain.changeScene(new Stage(), AttendanceWindowController.TITLE, AttendanceWindowController.WINDOW_FXML_NAME);
     }
 }

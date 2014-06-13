@@ -5,6 +5,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class AttendanceWindowController extends BaseController {
+    public static final String TITLE = "出席";
+    public static final String WINDOW_FXML_NAME = "AttendanceWindow";
     @FXML private AnchorPane attendanceWindow;
 
     public void Close() {
