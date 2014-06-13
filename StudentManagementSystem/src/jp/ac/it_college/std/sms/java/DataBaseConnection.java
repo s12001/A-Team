@@ -17,7 +17,7 @@ public class DataBaseConnection {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             mConnection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/pbl", "root", "159357"
+                    "jdbc:mysql://172.16.40.3/pbl", "pbl", "itcollege"
             );
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException e) {

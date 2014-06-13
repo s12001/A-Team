@@ -8,7 +8,7 @@ public class LoginWindowController extends BaseController {
         mMain.changeScene(mMain.getPrimaryStage(), "学生一覧", "StudentListWindow");
     }
 
-    public void PassWordChange() {
+    public void PassWordChangeHandler() {
         Stage stage = new Stage();
         stage.initOwner(mMain.getPrimaryStage());
         mMain.changeScene(stage, "パスワード変更", "PassWordChangeWindow");

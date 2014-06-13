@@ -12,13 +12,13 @@ public class StudentListWindowController extends BaseController {
         mMain.getPrimaryStage().close();
     }
 
-    public void StudentAdd() {
+    public void StudentAddHandler() {
         Stage stage = new Stage();
         stage.initOwner(mMain.getPrimaryStage());
         mMain.changeScene(stage, "学生追加", "StudentAddWindow");
     }
 
-    public void Attendance() {
+    public void AttendanceHandler() {
         Stage stage = new Stage();
         stage.initOwner(mMain.getPrimaryStage());
         mMain.changeScene(stage, "出席", "AttendanceWindow");

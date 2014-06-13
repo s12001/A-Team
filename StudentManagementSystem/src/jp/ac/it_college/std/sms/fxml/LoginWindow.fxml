@@ -43,7 +43,7 @@
         </Label>
 
         <Button layoutX="193.0" layoutY="381.0" mnemonicParsing="false" text="パスワード変更" AnchorPane.bottomAnchor="170.0"
-                AnchorPane.leftAnchor="193.0" onAction="#PassWordChange">
+                AnchorPane.leftAnchor="193.0" onAction="#PassWordChangeHandler">
             <font>
                 <Font size="20.0"/>
             </font>
