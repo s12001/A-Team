@@ -5,6 +5,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class StudentAddWindowController extends BaseController {
+    public static final String TITLE = "学生追加";
+    public static final String WINDOW_FXML_NAME = "StudentAddWindow";
     @FXML private AnchorPane studentAddWindow;
 
     public void Close() {
