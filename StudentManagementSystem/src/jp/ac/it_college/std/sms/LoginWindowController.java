@@ -32,19 +32,17 @@ public class LoginWindowController extends BaseController implements Initializab
     }
 
     public void loginHandle() {
-        if (!idTextField.getText().equals("") || !passwordField.getText().equals("")) {
-            if (checkUser(idTextField.getText())) {
-                if (checkPassword(idTextField.getText(), passwordField.getText(), checkUser(idTextField.getText()))) {
-                    main.changeScene(main.getPrimaryStage(), StudentListWindowController.TITLE, StudentListWindowController.FXML);
-                } else {
-                    resultLabel.setText(RESULT_MESSAGE);
-                }
+        if (idTextField.getText().equals("") || passwordField.getText().equals("")) {
+            resultLabel.setText(RESULT_MESSAGE);
+            return;
+        }
+        user.setId(idTextField.getText());
+        user.setPassword(passwordField.getText());
+        if (Authentication.isAuthenticated(user)) {
+            if (user.isStudent()) {
+                main.changeScene(main.getPrimaryStage(), ATeamController.TITLE, ATeamController.FXML);
             } else {
-                if (checkPassword(idTextField.getText(), passwordField.getText(), checkUser(idTextField.getText()))) {
-                    main.changeScene(main.getPrimaryStage(), ATeamController.TITLE, ATeamController.FXML);
-                } else {
-                    resultLabel.setText(RESULT_MESSAGE);
-                }
+                main.changeScene(main.getPrimaryStage(), StudentListWindowController.TITLE, StudentListWindowController.FXML);
             }
         } else {
             resultLabel.setText(RESULT_MESSAGE);
@@ -52,7 +50,13 @@ public class LoginWindowController extends BaseController implements Initializab
     }
 
     public void changePasswordHandle() {
-        if (checkPassword(idTextField.getText(), passwordField.getText(), checkUser(idTextField.getText()))) {
+        if (idTextField.getText().equals("") || passwordField.getText().equals("")) {
+            resultLabel.setText(RESULT_MESSAGE);
+            return;
+        }
+        user.setId(idTextField.getText());
+        user.setPassword(passwordField.getText());
+        if (Authentication.isAuthenticated(user)) {
             main.changeScene(new Stage(), PasswordChangeWindowController.TITLE, PasswordChangeWindowController.FXML);
         } else {
             resultLabel.setText(RESULT_MESSAGE);
