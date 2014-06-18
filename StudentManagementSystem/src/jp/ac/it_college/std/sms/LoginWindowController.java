@@ -1,0 +1,61 @@
+package jp.ac.it_college.std.sms;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginWindowController extends BaseController implements Initializable {
+    public static final String TITLE = "ログイン画面";
+    public static final String FXML = "LoginWindow";
+    @FXML private AnchorPane loginWindow;
+    @FXML private TextField idTextField;
+    @FXML private PasswordField passwordField;
+    @FXML private Label resultLabel;
+
+    private static final String RESULT_MESSAGE = "IDかパスワードが間違っています";
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loginWindow.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                loginHandle();
+            }
+        });
+    }
+
+    public void loginHandle() {
+        if (!idTextField.getText().equals("") || !passwordField.getText().equals("")) {
+            if (checkUser(idTextField.getText())) {
+                if (checkPassword(idTextField.getText(), passwordField.getText(), checkUser(idTextField.getText()))) {
+                    main.changeScene(main.getPrimaryStage(), StudentListWindowController.TITLE, StudentListWindowController.FXML);
+                } else {
+                    resultLabel.setText(RESULT_MESSAGE);
+                }
+            } else {
+                if (checkPassword(idTextField.getText(), passwordField.getText(), checkUser(idTextField.getText()))) {
+                    main.changeScene(main.getPrimaryStage(), ATeamController.TITLE, ATeamController.FXML);
+                } else {
+                    resultLabel.setText(RESULT_MESSAGE);
+                }
+            }
+        } else {
+            resultLabel.setText(RESULT_MESSAGE);
+        }
+    }
+
+    public void changePasswordHandle() {
+        if (checkPassword(idTextField.getText(), passwordField.getText(), checkUser(idTextField.getText()))) {
+            main.changeScene(new Stage(), PasswordChangeWindowController.TITLE, PasswordChangeWindowController.FXML);
+        } else {
+            resultLabel.setText(RESULT_MESSAGE);
+        }
+    }
+}

@@ -5,22 +5,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="loginWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.ac.it_college.std.sms.java.LoginWindowController">
+<AnchorPane fx:id="loginWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="jp.ac.it_college.std.sms.LoginWindowController">
     <children>
 
-        <TextField fx:id="student_id" layoutX="351.0" layoutY="202.0" prefHeight="38.0" prefWidth="256.0" promptText="学籍番号" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="193.0" AnchorPane.topAnchor="170.0">
+        <TextField fx:id="idTextField" layoutX="351.0" layoutY="202.0" prefHeight="38.0" prefWidth="256.0" promptText="学籍番号" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="193.0" AnchorPane.topAnchor="170.0">
             <font>
                 <Font size="20.0" />
             </font>
         </TextField>
 
-        <PasswordField fx:id="password" layoutX="351.0" layoutY="262.0" prefHeight="38.0" prefWidth="256.0" promptText="パスワード">
+        <PasswordField fx:id="passwordField" layoutX="351.0" layoutY="262.0" prefHeight="38.0" prefWidth="256.0" promptText="パスワード">
             <font>
                 <Font size="20.0" />
             </font>
         </PasswordField>
 
-        <Button layoutX="499.0" layoutY="381.0" mnemonicParsing="false" onAction="#Login" text="ログイン" AnchorPane.bottomAnchor="170.0">
+        <Button layoutX="499.0" layoutY="381.0" mnemonicParsing="false" onAction="#loginHandle" text="ログイン" AnchorPane.bottomAnchor="170.0">
             <font>
                 <Font size="20.0" />
             </font>
@@ -38,13 +39,13 @@
             </font>
         </Label>
 
-        <Button layoutX="193.0" layoutY="381.0" mnemonicParsing="false" onAction="#PassWordChangeHandler" text="パスワード変更" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="193.0">
+        <Button layoutX="193.0" layoutY="381.0" mnemonicParsing="false" onAction="#changePasswordHandle" text="パスワード変更" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="193.0">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
 
-        <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" layoutX="384.0" layoutY="341.0" textFill="RED" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="320.0">
+        <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="384.0" layoutY="341.0" textFill="RED" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="320.0">
 <font>
 <Font size="25.0" />
 </font></Label>

@@ -6,12 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="attendanceWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
-            prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="jp.ac.it_college.std.sms.java.AttendanceWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="jp.ac.it_college.std.sms.AttendanceWindowController">
     <children>
 
-        <Label layoutX="110.0" layoutY="49.0" text="00" AnchorPane.topAnchor="50.0">
+        <Label fx:id="hourLabel" layoutX="110.0" layoutY="49.0" text="00" AnchorPane.topAnchor="50.0">
             <font>
                 <Font size="150.0"/>
             </font>
@@ -29,7 +30,7 @@
             </effect>
         </Label>
 
-        <Label layoutX="317.0" layoutY="50.0" text="00" AnchorPane.topAnchor="50.0">
+        <Label fx:id="minuteLabel" layoutX="317.0" layoutY="50.0" text="00" AnchorPane.topAnchor="50.0">
             <font>
                 <Font size="150.0"/>
             </font>
@@ -47,7 +48,7 @@
             </effect>
         </Label>
 
-        <Label layoutX="524.0" layoutY="49.0" text="00" AnchorPane.topAnchor="50.0">
+        <Label fx:id="secondLabel" layoutX="524.0" layoutY="49.0" text="00" AnchorPane.topAnchor="50.0">
             <font>
                 <Font size="150.0"/>
             </font>
@@ -56,36 +57,44 @@
             </effect>
         </Label>
 
-        <Button focusTraversable="false" layoutX="590.0" layoutY="302.0" mnemonicParsing="false" text="登校">
-            <font>
-                <Font size="30.0"/>
-            </font>
-        </Button>
-
-        <TextField focusTraversable="false" layoutX="99.0" layoutY="302.0" promptText="学籍番号">
+        <TextField fx:id="idTextField" layoutX="99.0" layoutY="302.0" promptText="学籍番号">
             <font>
                 <Font size="30.0"/>
             </font>
         </TextField>
 
-        <Button focusTraversable="false" layoutX="590.0" layoutY="416.0" mnemonicParsing="false" text="下校">
-            <font>
-                <Font size="30.0"/>
-            </font>
-        </Button>
-
-        <PasswordField focusTraversable="false" layoutX="99.0" layoutY="416.0" promptText="パスワード">
+        <PasswordField fx:id="passwordField" layoutX="99.0" layoutY="416.0" promptText="パスワード">
             <font>
                 <Font size="30.0"/>
             </font>
         </PasswordField>
 
-        <Button focusTraversable="false" layoutX="703.0" layoutY="520.0" mnemonicParsing="false" text="終了"
-                AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" onAction="#Close">
+        <Button layoutX="590.0" layoutY="302.0" mnemonicParsing="false" onAction="#inTimeHandle" text="登校">
+            <font>
+                <Font size="30.0"/>
+            </font>
+        </Button>
+
+        <Button layoutX="590.0" layoutY="416.0" mnemonicParsing="false" onAction="#outTimeHandle" text="下校">
+            <font>
+                <Font size="30.0"/>
+            </font>
+        </Button>
+
+        <Button focusTraversable="false" layoutX="703.0" layoutY="520.0" mnemonicParsing="false" onAction="#closeHandle"
+                text="終了" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
             <font>
                 <Font size="20.0"/>
             </font>
         </Button>
-        
+
+        <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="384.0" layoutY="497.0"
+               textAlignment="CENTER" textFill="RED" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0"
+               AnchorPane.topAnchor="480.0">
+            <font>
+                <Font size="25.0"/>
+            </font>
+        </Label>
+
     </children>
 </AnchorPane>
