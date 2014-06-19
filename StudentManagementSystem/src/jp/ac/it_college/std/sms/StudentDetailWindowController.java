@@ -1,12 +1,16 @@
 package jp.ac.it_college.std.sms;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class StudentDetailWindowController extends BaseController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class StudentDetailWindowController extends BaseController implements Initializable {
     public static final String TITLE = "学生詳細画面";
     public static final String FXML = "StudentDetailWindow";
     @FXML private TextField idTextField;
@@ -24,6 +28,10 @@ public class StudentDetailWindowController extends BaseController {
     @FXML private TableColumn certificationColumn;
     @FXML private TableColumn dateColumn;
     @FXML private TableColumn resultColumn;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    }
 
     public void editHandle() {
     }

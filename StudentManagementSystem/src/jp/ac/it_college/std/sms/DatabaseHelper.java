@@ -21,6 +21,7 @@ public class DatabaseHelper {
         try {
             Class.forName(driverName).newInstance();
             connection = DriverManager.getConnection(host, user, password);
+            connection.setAutoCommit(false);
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException e) {
             System.err.println("ドライバーロード失敗");
@@ -47,5 +48,21 @@ public class DatabaseHelper {
             e.printStackTrace();
         }
         return preparedStatement;
+    }
+
+    public void commit() {
+        try {
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void close() {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

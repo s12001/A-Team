@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -39,9 +40,21 @@
         </Button>
 
         <ComboBox fx:id="departmentComboBox" layoutX="324.0" layoutY="125.0" value="学科/コース"
-                  AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0"/>
+                  AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="学科/コース"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
 
         <ComboBox fx:id="schoolGradeComboBox" layoutX="324.0" layoutY="125.0" value="学年" AnchorPane.rightAnchor="400.0"
-                  AnchorPane.topAnchor="110.0"/>
+                  AnchorPane.topAnchor="110.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="学年"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
     </children>
 </AnchorPane>
