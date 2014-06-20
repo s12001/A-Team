@@ -1,4 +1,4 @@
-package jp.ac.it_college.std.sms;
+package jp.ac.it_college.std.sms.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import jp.ac.it_college.std.sms.Authentication;
 
 import java.net.URL;
 import java.util.ResourceBundle;

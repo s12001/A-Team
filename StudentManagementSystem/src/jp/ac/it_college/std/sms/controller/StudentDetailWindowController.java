@@ -1,4 +1,4 @@
-package jp.ac.it_college.std.sms;
+package jp.ac.it_college.std.sms.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

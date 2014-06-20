@@ -1,4 +1,4 @@
-package jp.ac.it_college.std.sms;
+package jp.ac.it_college.std.sms.controller;
 
 import javafx.beans.Observable;
 import javafx.fxml.FXML;
@@ -8,6 +8,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import jp.ac.it_college.std.sms.DatabaseHelper;
+import jp.ac.it_college.std.sms.Student;
 
 import java.net.URL;
 import java.sql.ResultSet;

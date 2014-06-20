@@ -1,4 +1,4 @@
-package jp.ac.it_college.std.sms;
+package jp.ac.it_college.std.sms.controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import jp.ac.it_college.std.sms.Authentication;
+import jp.ac.it_college.std.sms.DatabaseHelper;
 
 import java.net.URL;
 import java.sql.*;

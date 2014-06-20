@@ -1,8 +1,10 @@
-package jp.ac.it_college.std.sms;
+package jp.ac.it_college.std.sms.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
+import jp.ac.it_college.std.sms.Main;
+import jp.ac.it_college.std.sms.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
