@@ -23,7 +23,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = Encryption.getEncryptedPassword(password);
     }
 
     public boolean isStudent() {
