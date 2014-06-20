@@ -1,20 +1,16 @@
 package jp.ac.it_college.std.sms;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.util.Timer;
 
 public class Main extends Application {
     private Stage primaryStage;
     private User user;
-    private BaseController controller;
     private static final String ERROR_FXML_LOAD = "FXMLロードできませんでした";
 
     public static void main(String[] args) {
@@ -25,6 +21,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         user = new User();
+        this.primaryStage.setOnCloseRequest(event -> DatabaseHelper.getInstance().close());
         changeScene(this.primaryStage, LoginWindowController.TITLE, LoginWindowController.FXML);
     }
 
@@ -40,7 +37,7 @@ public class Main extends Application {
             System.err.println(ERROR_FXML_LOAD);
         }
         stage.setScene(new Scene(pane));
-        controller = loader.getController();
+        BaseController controller = loader.getController();
         controller.setMain(this);
         controller.setUser(user);
         stage.show();
