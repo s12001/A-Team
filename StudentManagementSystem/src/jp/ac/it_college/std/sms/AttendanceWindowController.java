@@ -17,6 +17,7 @@ import java.util.*;
 public class AttendanceWindowController extends BaseController implements Initializable {
     public static final String TITLE = "出席画面";
     public static final String FXML = "AttendanceWindow";
+    private Timer timer;
     @FXML private Label currentTime;
     @FXML private TextField idTextField;
     @FXML private PasswordField passwordField;
@@ -24,15 +25,14 @@ public class AttendanceWindowController extends BaseController implements Initia
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Timer timer = new Timer();
         Calendar calendar = Calendar.getInstance(Locale.JAPAN);
-        //calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + 1);
+        timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 Platform.runLater(() -> currentTime.setText(
                         new SimpleDateFormat("HH:mm:ss")
-                                .format(Calendar.getInstance().getTime())));
+                                .format(Calendar.getInstance(Locale.JAPAN).getTime())));
             }
         }, calendar.getTime(), 100L);
     }
@@ -108,6 +108,8 @@ public class AttendanceWindowController extends BaseController implements Initia
 
     public void closeHandle() {
         Stage stage = (Stage) currentTime.getScene().getWindow();
+        timer.cancel();
+        timer.purge();
         stage.close();
     }
 }

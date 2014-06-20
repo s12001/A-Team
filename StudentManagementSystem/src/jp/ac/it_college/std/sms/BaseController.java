@@ -7,7 +7,6 @@ import javafx.scene.control.ComboBox;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Timer;
 
 abstract public class BaseController {
     protected Main main;
