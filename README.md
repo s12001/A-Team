@@ -11,3 +11,6 @@ IDE:IntelliJ IDEA
 JDK:Oracle JDK8  
 DB:MySQL(JDBC)
 
+###JDBC
+http://dev.mysql.com/downloads/connector/j/5.1.html
+
