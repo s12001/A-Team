@@ -7,9 +7,9 @@
 
 ##環境
 
-IDE:IntelliJ IDEA  
-JDK:Oracle JDK8  
-DB:MySQL
+IDE : IntelliJ IDEA  
+JDK : Oracle JDK8  
+DB : MySQL
 
 ###JDBC
 http://dev.mysql.com/downloads/connector/j/5.1.html
