@@ -5,9 +5,9 @@ import java.sql.*;
 public class DatabaseHelper {
     private static DatabaseHelper instance;
     private static final String driverName = "com.mysql.jdbc.Driver";
-    private static final String host = "jdbc:mysql://172.16.40.3/pbl";
-    private static final String user = "pbl";
-    private static final String password = "itcollege";
+    private static final String host = "jdbc:mysql://localhost/sms";
+    private static final String user = "user";
+    private static final String password = "password";
     private Connection connection;
 
     public static DatabaseHelper getInstance() {
